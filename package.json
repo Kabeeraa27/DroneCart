@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.9",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "express.js": "^1.0.0",
+    "mongoose": "^7.6.12",
+    "serve-index": "^1.9.1"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "wp_project",
+  "version": "1.0.0",
+  "main": "config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
