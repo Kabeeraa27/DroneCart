@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="droneApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="cart2.js"></script>
+    <link rel="stylesheet" href="cartpage-css.css">
+    
+</head>
+<body ng-controller="CartController">
+
+    <div class="Header">
+        <h3 class="Heading">Shopping Cart</h3>
+    </div>
+
+    <div class="CartItems">
+
+        <div class="imagebox">
+            <img ng-src="{{ selectedDroneImageUrl }}" style="height: 250px;" alt="Product Image" />
+        </div>
+
+        <div class="about">
+            <h1 class="name">{{ selectedDroneName }}</h1> 
+            <h3 class="subtitle">DESCRIPTION</h3>
+        </div>        
+    
+        <div class="counter">
+            <div class="btn" ng-click="decrementCount()">-</div>
+            <div class="count">{{ count }}</div>
+            <div class="btn" ng-click="incrementCount()">+</div>
+        </div>
+    
+        <div class="prices">
+            <div class="amount">{{ selectedDronePrice }}</div> 
+        </div>
+    
+    </div>
+
+    <hr> 
+    <div class="checkout">
+        <div class="total">
+            <div>
+                <div class="Subtotal">Sub-Total</div>
+                <div class="items">{{ drones.length }} items</div>
+            </div>
+            <div class="total-amount">{{ calculateTotal() }}</div>
+        </div>
+        <button class="btn" ng-click="checkout()">CHECKOUT</button>
+    </div>
+    
+</body>
+</html>
+ 
