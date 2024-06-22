@@ -1,0 +1,7 @@
+﻿
+
+#pagination a {
+text-decoration: none;
+background-color: #888178; padding: 15px 20px; border-radius: 4px; color: #fff;
+font-weight: 600;
+}
