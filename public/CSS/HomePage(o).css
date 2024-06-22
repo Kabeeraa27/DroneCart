@@ -1,0 +1,439 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global Styles */
+
+h1 {
+  font-size: 50px;
+  line-height: 64px;
+  color: #222;
+}
+
+h2 {
+  font-size: 46px;
+  line-height: 54px;
+  color: #222;
+}
+
+h4 {
+  font-size: 20px;
+  color: #222;
+}
+
+h6 {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+p {
+  font-size: 16px;
+  color: #465b52;
+  margin: 15px 0 20px 0;
+}
+
+.section-p1 {
+  padding: 40px 80px;
+}
+
+.section-m1 {
+  margin: 40px 0;
+}
+
+body {
+  width: 100%;
+}
+
+/*=============== HEADER ===============*/
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    box-shadow: 0 5px 15px rgb(4, 211, 234);
+    background: white;
+}
+
+/*=============== NAV ===============*/
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+}
+#navbar li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: blue;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 30px;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a {
+    margin-left: 40px;
+    font-family: Arial;
+    color:black;
+    text-decoration: none;
+    font-weight:bold ;
+}
+div.head {
+    background-color: white;
+    align-self: center;
+    width: 95%;
+    margin-top: 20px;
+    margin-left: 20px;
+    height:90px;
+    padding: 10px;
+    box-shadow: 0px 0px 10px 2px black;
+    margin-bottom: 50px;
+    position: fixed; 
+    top: 0;
+    z-index: 1000;
+}
+td.prod {
+    text-align: center;
+    height: 300px;
+    width: 300px;
+    padding: 30px;
+    cursor: pointer;
+    background-color: white;
+}
+td.prod:hover {
+    box-shadow:inset 0 0 20px 5px, 0 0 1px 1px rgba(0, 0, 0, 0.404);
+    text-shadow: 0 0 1px black;
+}
+.revbox:hover {
+    box-shadow:0 0 5px 10px rgba(0, 0, 0, 0.404);
+    text-shadow: 0 0 1px black;
+}
+.slide-down {
+    margin: 0;
+    width: 100%;
+    opacity: 0;
+    animation: slide-down-animation 1s both;
+}
+.scroll-right {
+    margin-top:6%;
+    position: absolute;
+    color: white;
+    animation: scroll 1s forwards;
+    z-index: 200;
+    font-family: Arial;
+    font-size: 50px;
+    font-weight: 1000;
+    width:60%;
+    text-shadow: 0 0 40px black;
+}
+@keyframes slide-down-animation {
+0% {
+        opacity: 0;
+        transform: translateY(-100%);
+}
+100% {
+        opacity: 1;
+        transform: translateY(0);
+}
+}
+@keyframes scroll {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+         transform: translateX(0);
+    }
+}
+p {
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 400;
+    text-shadow: 0 0 1px black;
+}
+h6 {
+    font-size: 25px;
+}
+h3 {
+    color:white;
+    font-family:sans-serif ;
+    font-size: 70px;
+    font-style: bold;
+    text-shadow: 0 0 30px black;
+    margin-bottom: 100px;
+    padding-left: 50px;
+}
+.bg1 {
+    background-image: linear-gradient(180deg,rgb(5, 107, 130),white);
+    padding-top: 200px;
+    background-color: black;
+    height: 1000px;
+    padding-bottom: 200px;
+    margin-top: -10px;
+
+}
+.bg2 {
+    padding-top: 400px;
+    background-image: url("bg_white.jpg");
+    background-size: contain;
+    height: auto;
+    padding-bottom: 200px;
+    box-shadow: inset 0 0 100px 50px white;
+    
+}
+h6.rev{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    text-shadow: 10px rgb(237, 227, 252);
+    border-bottom: 1px groove rgb(168, 168, 168);
+}
+p.rev {
+    color: rgb(97, 97, 97);
+    font-style: oblique;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 0 0 white;
+}
+.revbox {
+    height: auto;
+    padding: 20px;
+    padding-bottom: 60px;
+    width: 80%;
+    margin: 5% 7% 5% 7%;
+    border: 1px solid grey;
+    box-shadow: 0 0 5px 1px grey;
+    background-color:lavenderblush;
+}
+#rev {
+    color:rgb(79, 78, 78);
+    font-family:sans-serif;
+    font-size: 70px;
+    font-style: bold;
+    text-shadow: 0 0 1px grey;
+    margin-bottom: 100px;
+}
+footer {
+    text-shadow: 0 0 1px whitesmoke;
+    padding:20px;
+    box-shadow: -10px 0 50px 90px rgb(45, 45, 45);
+    height: 600px;
+    background-color: rgb(45, 45, 45);
+    font-size: 20px;
+    color: white;
+}
+li {
+    margin-top: 20px;
+}
+a:hover {
+    text-decoration: underline;
+}
+.pi {
+    height:200px;
+    width:180px;
+    resize: none;
+
+}
+
+
+/*=============== NAVBAR ===============*/
+
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 4.5rem;
+
+  /*========== Colors ==========*/
+  --hue: 174;
+  --sat: 63%;
+  --first-color: hsl(var(--hue), var(--sat), 40%);
+  --first-color-alt: hsl(var(--hue), var(--sat), 36%);
+  --title-color: hsl(var(--hue), 12%, 15%);
+  --text-color: hsl(var(--hue), 8%, 35%);
+  --body-color: hsl(var(--hue), 100%, 99%);
+  --container-color: #FFF;
+
+  /*========== Font and typography ==========*/
+  --body-font: 'Open Sans', sans-serif;
+  --h1-font-size: 1.5rem;
+  --normal-font-size: .938rem;
+  --tiny-font-size: .625rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --h1-font-size: 2.25rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.section {
+  padding: 4.5rem 0 2rem;
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  color: var(--title-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.section__height {
+  height: 100vh;
+}
+
+/*=============== LAYOUT ===============*/
+.container {
+  max-width: 968px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+
+
+/* Change background header */
+.scroll-header {
+  box-shadow: 0 1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
+}
+
+/*=============== MEDIA QUERIES ===============*/
+/* For small devices */
+/* Remove if you choose, the minimalist design */
+@media screen and (max-width: 320px) {
+  .nav__name {
+    display: none;
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 576px) {
+  .nav__list {
+    justify-content: center;
+    column-gap: 3rem;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  body {
+    margin: 0;
+  }
+  .section {
+    padding: 7rem 0 2rem;
+  }
+  .nav {
+    height: calc(var(--header-height) + 1.5rem); /* 4.5rem */
+  }
+  .nav__img {
+    display: none;
+  }
+  .nav__icon {
+    display: none;
+  }
+  .nav__name {
+    font-size: var(--normal-font-size);
+    /* display: block; */ /* Minimalist design, visible labels */
+  }
+  .nav__link:hover {
+    color: var(--first-color);
+  }
+
+  /* First design, remove if you choose the minimalist design */
+  .active-link::before {
+    content: '';
+    position: absolute;
+    bottom: -.75rem;
+    width: 4px;
+    height: 4px;
+    background-color: var(--first-color);
+    border-radius: 50%;
+  }
+
+  /* Minimalist design */
+  /* .active-link::before{
+      bottom: -.75rem;
+  } */
+}
+
+/* For large devices */
+@media screen and (min-width: 1024px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
