@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog</title>
+    <link rel="stylesheet" type="text/css" href="blog.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Create a Blog Post</h1>
+        <form action="submit_post.php" method="post">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required><br>
+
+            <label for="content">Content:</label><br>
+            <textarea id="content" name="content" rows="5" cols="33" required></textarea><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
+<style>
+.container {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UAV Models</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<header>
+		<h1>UAV Models</h1>
+	</header>
+
+	<main>
+		<section id="dji">
+			<h2>DJI</h2>
+			<img src="DJI Mavic Air 2.jpeg" alt="DJI Mavic Air 2">
+			<p>The DJI Mavic Air 2 is a high-performance drone that offers 48MP photos, 4K video, and a 3-axis gimbal for stability.</p>
+		</section>
+
+		<section id="parrot">
+			<h2>Parrot</h2>
+			<img src="parrot anafi.jpeg" alt="Parrot Anafi">
+			<p>The Parrot Anafi is a lightweight and portable drone that offers 4K HDR video, a 21MP camera, and a 3-axis stabilization system.</p>
+		</section>
+
+		<section id="autel">
+			<h2>Autel</h2>
+			<img src="autel evo II.jpeg" alt="Autel Evo II">
+			<p>The Autel Evo II is a powerful and versatile drone that offers 8K video, a 1/2-inch sensor, and a 3-axis gimbal for smooth footage.</p>
+		</section>
+	</main>
+
+	<footer>
+		<p>&copy; 2023 UAV Models</p>
+	</footer>
+
+	<script src="script.js"></script>
+</body>
+</html>
+<style>
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 1rem;
+}
+
+main {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin: 2rem;
+}
+
+section {
+	background-color: #f2f2f2;
+	border: 1px solid #ddd;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+	flex-basis: 30%;
+	margin: 1rem;
+	padding: 1rem;
+}
+
+section img {
+	max-width: 100%;
+}
+
+footer {
+	background-color: #333;
+	color: #fff;
+	padding: 1rem;
+	text-align: center;
+}
+</style>
+<script>
+// Example functionality to be added to the blog
+
+document.getElementById('dji').addEventListener('click', function() {
+	alert('You clicked on the DJI section!');
+});
+document.getElementById('parrot').addEventListener('click', function() {
+	alert('You clicked on the Parrot section!');
+});
+document.getElementById('autel').addEventListener('click', function() {
+	alert('You clicked on the Autel evo section!');
+});
+</script>
