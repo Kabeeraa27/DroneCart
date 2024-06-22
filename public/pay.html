@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="pay.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Payment Form</h1>
+        <form onsubmit="event.preventDefault(); submitPayment();">
+            order summary <br><br>
+            <label for="name">Name:</label><br><br>
+            <input type="text" id="name" oninput="payment.name = this.value;" required><span class="error" id="nameError"></span><br><br>
+
+            <label for="phone">Phone Number:</label><br><br>
+            <input type="text" id="phone" oninput="payment.phone = this.value;" required><span class="error" id="phoneError"></span><br><br>
+            
+            <label for="email">Email:</label><br><br>
+            <input type="email" id="email" oninput="payment.email = this.value;" required><span class="error" id="emailError"></span><br><br>
+
+            <label for="address">Address:</label><br><br>
+            <textarea id="address" oninput="payment.address = this.value;" required></textarea><span class="error" id="addressError"></span><br><br>
+
+            <label for="cardType">Card Type:</label><br><br>
+            <select id="cardType" onchange="payment.cardType = this.value;" required>
+                <option value="">Select Card Type</option>
+                <option value="visa">Visa</option>
+                <option value="mastercard">Mastercard</option>
+            </select>
+            <label for="cardNumber">Card Number:</label><br><br>
+            <input type="text" id="cardNumber" oninput="payment.cardNumber = this.value;" required><span class="error" id="cardNumberError"></span><br><br>
+
+            <label for="expiryDate">Expiry Date:</label><br><br>
+            <input type="text" id="expiryDate" oninput="payment.expiryDate = this.value;" required><span class="error" id="expiryDateError"></span><br><br>
+
+            <label for="cvv">CVV:</label><br><br>
+            <input type="text" id="cvv" oninput="payment.cvv = this.value;" required><span class="error" id="cvvError"></span><br><br>
+
+            <button type="submit">Pay Now !</button>
+        </form>
+    </div>
+    <script>
+        var payment = {};
+
+        function submitPayment() {
+            if (!payment.name || !payment.email  || !payment.cardType || !payment.cardNumber || !payment.expiryDate || !payment.cvv) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            else {
+                window.open("confirm.html")
+            }
+
+
+            payment = {};
+            document.getElementById('name').value = '';
+            document.getElementById('phone').value = '';
+            document.getElementById('address').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('cardType').value = '';
+            document.getElementById('cardNumber').value = '';
+            document.getElementById('expiryDate').value = '';
+            document.getElementById('cvv').value = '';
+            document.getElementById('nameError').innerHTML = '';
+            document.getElementById('emailError').innerHTML = '';
+            document.getElementById('amountError').innerHTML = '';
+            document.getElementById('cardNumberError').innerHTML = '';
+            document.getElementById('expiryDateError').innerHTML = '';
+            document.getElementById('cvvError').innerHTML = '';
+        }
+       
+        function checkPhone() {
+            var phone = payment.phone;
+            var regex = /^[0-9]{10}$/; // regex for 10-digit phone number
+            return regex.test(phone);
+        }
+
+        function displayPhoneError() {
+            if (!checkPhone()) {
+                document.getElementById('phoneError').innerHTML = 'Invalid phone number';
+            } else {
+                document.getElementById('phoneError').innerHTML = '';
+            }
+        }
+
+        document.getElementById('phone').addEventListener('input', function() {
+            displayPhoneError();
+        });
+
+                // function to check if the address is valid
+        function checkAddress() {
+                var address = payment.address;
+                // add your validation logic here
+                return true; // return true if the address is valid, false otherwise
+        }
+
+        function displayAddressError() {
+            if (!checkAddress()) {
+                document.getElementById('addressError').innerHTML = 'Invalid address';
+            } else {
+                document.getElementById('addressError').innerHTML = '';
+            }
+        }
+
+        document.getElementById('address').addEventListener('input', function() {
+            displayAddressError();
+        });
+
+        function checkEmail() {
+            var email = payment.email;
+            var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            return regex.test(email);
+        }
+
+        function checkCardNumber() {
+            var cardNumber = payment.cardNumber;
+            var regex = /^[0-9]{16}$/;
+            return regex.test(cardNumber);
+        }
+
+        function checkExpiryDate() {
+            var expiryDate = payment.expiryDate;
+            var regex = /^(0[1-9]|1[0-2])\/?([0-9]{2})$/;
+            return regex.test(expiryDate);
+        }
+
+        function checkCVV() {
+            var cvv = payment.cvv;
+            var regex = /^[0-9]{3}$/;
+            return regex.test(cvv);
+        }
+
+        function displayEmailError() {
+            if (!checkEmail()) {
+                document.getElementById('emailError').innerHTML = 'Invalid email address';
+            } else {
+                document.getElementById('emailError').innerHTML = '';
+            }
+        }
+        function displayCardNumberError() {
+            if (!checkCardNumber()) {
+                document.getElementById('cardNumberError').innerHTML = 'Invalid card number';
+            } else {
+                document.getElementById('cardNumberError').innerHTML = '';
+            }
+        }
+
+        function displayExpiryDateError() {
+            if (!checkExpiryDate()) {
+                document.getElementById('expiryDateError').innerHTML = 'Invalid expiry date';
+            } else {
+                document.getElementById('expiryDateError').innerHTML = '';
+            }
+        }
+
+        function displayCVVError() {
+            if (!checkCVV()) {
+                document.getElementById('cvvError').innerHTML = 'Invalid CVV';
+            } else {
+                document.getElementById('cvvError').innerHTML = '';
+            }
+        }
+
+        document.getElementById('email').addEventListener('input', function() {
+            displayEmailError();
+        });
+
+        document.getElementById('cardNumber').addEventListener('input', function() {
+            displayCardNumberError();
+        });
+
+        document.getElementById('expiryDate').addEventListener('input', function() {
+            displayExpiryDateError();
+        });
+
+        document.getElementById('cvv').addEventListener('input', function() {
+            displayCVVError();
+        });
+    </script>
+</body>
+</html>
