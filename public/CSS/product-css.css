@@ -1,0 +1,67 @@
+    .container {
+        width: 700px;
+        height: 700px; 
+        position: relative;
+        overflow: hidden;
+        border: 1px solid White;
+        display: inline-block;
+        margin: 10px;
+        border-radius: 25px;
+        align-items: center;
+        cursor: pointer;
+        background-color: white;
+        border: 1px solid grey;
+    }
+
+    .container img {
+        width: 100%;
+        height: auto;
+        background-color: white;
+        
+    }
+    
+    .t {
+        color: white;
+        background-color: rgba(0, 0, 0, 0.352);
+        position:absolute;
+        text-align:center;
+        right: -100%;
+        top: 0%;
+        height: 100%;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        transition: all 0.5s;
+        
+    }
+    .container:hover .t {
+        right: 0;
+        box-shadow: 0 0 5px 5px black;
+    }
+
+    body{
+        background-color: white;
+    }   
+
+    #searchInput
+    {
+        box-shadow: none;
+        padding: 10px 10px;
+        width: 50%;
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0 auto;
+        border-top: 20px; 
+        border:solid 1px #ccc;
+        border-radius: 50px;
+      }
+    #srch {
+        width: 70px;
+        color:black;
+        background-color: white;
+        font-weight:bold ;
+        font-size: larger;
+        height: 30px;
+        border-radius: 10px;
+        border: none;
+    }

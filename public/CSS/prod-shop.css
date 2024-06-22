@@ -1,0 +1,63 @@
+/* Styles for the page link */
+#page {
+    text-decoration: none; 
+    background-color: #888178; 
+    padding: 15px 20px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 600;
+}
+
+#page a i {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#page a {
+    text-decoration: none;
+    background-color: #888178; 
+    padding: 15px 20px; 
+    border-radius: 4px; 
+    color: #fff;
+    font-weight: 600;
+}
+
+#prodetails .single-pro-details{
+    width: 50%;
+    padding-top: 30px;
+}
+
+#prodetails .single-pro-details h4 {
+    padding: 40px 0 20px 0;
+}
+
+#prodetails .single-pro-details h2 {
+    font-size: 26px;
+}
+
+#prodetails .single-pro-details select {
+    display: block;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+#prodetails .single-pro-details input {
+    width: 50px;
+    height: 47px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#prodetails .single-pro-details input:focus {
+    outline: none; /* Removed space between 'input:' and 'focus' */
+}
+
+#prodetails .single-pro-details button {
+    background: #088178;
+    color: #fff;
+}
+
+#prodetails .single-pro-details span {
+    line-height: 25px;
+}
