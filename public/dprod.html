@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our wide range of cutting-edge drones for aerial photography, videography, mapping, and more.">
+    <title>Drone Product Home Page</title> 
+    <script src="https://kit.fontawesome.com/3133229378.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/public/CSS/HomePage(n).css">
+
+    
+</head>
+</head>
+<body>  
+
+    <section id="header">
+        <a href="#"></a>
+
+        <div>
+            <ul id="navbar">
+                <li><a  href="HomePage.html">HOME</a></li>
+                <li><a class="active" href="/public/shop.html">PRODUCT</a></li>
+                <li><a  href="/public/Accessories.html">ACCESSORIES</a></li>
+                <li><a href="../public/blogs.html">BLOG</a></li>
+                <li><a href="../public/review.html">REVIEW</a></li>
+                <li class="qd"><a href="/public/cart.html"><img src="/public/IMG/drone.ico" alt="Drone Icon"></a></li>
+            </ul>
+        </div>
+
+    </section>
+
+    
+    <section id="top-header">
+        <h2>OUR PRODUCTS</h2>
+    </section>
+
+    <section id="prodetails" class="section-p1">
+        <div class="single-pro-image">
+            <img src="img/products/f1.jpg" width="100%" id="MainImg" alt="">
+            <div class="small-img-group">
+                <div class="small-img-col"><img src="/public/IMG/products/f1.jpg" width="100%" class="small-img" alt=""> </div>
+                <div class="small-img-col"><img src="/public/IMG/products/f2.jpg" width="100%" class="small-img" alt=""> </div>
+                <div class="small-img-col"><img src="/public/IMG/products/f3.jpg" width="100%" class="small-img" alt=""> </div>
+                <div class="small-img-col"><img src="/public/IMG/products/f4.jpg" width="100%" class="small-img" alt=""> </div>
+            </div>
+        </div>
+
+        <div class="single-pro-details"> 
+            <h6>Home / T-Shirt</h6>
+            <h4>Men's Fashion T Shirt</h4> 
+            <h2 id="price">$139.00</h2>
+            <select>
+                <option>Select Size</option>
+                <option>XL</option>
+                <option>XXL</option>
+                <option>Small</option>
+                <option>Large</option>
+            </select>
+            <input type="number" value="1">
+            <button class="normal" id="addtocart" onclick="addToCart()">Add To Cart</button>
+            <h4></h4>
+            <span></span>
+        </div>
+    </section>
+
+    <section id="newsletter" class="section-p1">
+        <div class="newstext">
+            <h4>Sign Up for Newletters</h4>
+            <p>Get the latest updates and 
+            <span>Special Offers.</span> </p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Your Email Address">
+            <button class="normal"> Sign Up </button>
+
+        </div>
+    </section>
+        
+    <footer id="section-p1">
+        <div class="col">
+            <img src="" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address: </strong> 562 Wellington Road, Street 32, San Francisco</p>
+            <p><strong>Phone:</strong> +01 2222 365 / (+91) 81 2345 6789</p>
+            <p><strong>Hours:</strong> 10:00 - 18:00, Mon Sat</p>
+
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i> 
+                    <i class="fab fa-twitter"></i> 
+                    <i class="fab fa-instagram"></i> 
+                    <i class="fab fa-pinterest-p"></i> 
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+                <a href="#">About us</a>
+                <a href="#">Delivery information</a> 
+                <a href="#">Privacy policy</a>
+                <a href="#">Terms & Conditions</a> 
+                <a href="#">Contact us</a>
+        </div>
+
+        <div class="col">
+        <h4>My Account</h4>
+            <a href="#">Sign in</a>
+            <a href="/public/cart.html">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a> 
+            <a href="#">Help</a>
+        </div>
+
+        <div class="col install">
+
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p> 
+            <div class="row">
+                <img src="" alt=""> 
+                <img src="" alt=""> 
+            </div>
+            <p>Secured Payment Gateways </p> 
+            <img src="../public/IMG/pay/pay.png" alt="">
+
+        </div>
+
+        <div class="copyright">
+            <p>2024 C, KABEER</p>
+        </div>
+
+    </footer>
+
+    <script>
+        var MainImg = document.getElementById("MainImg"); 
+        var smallimg = document.getElementsByClassName("small-img");
+        smallimg[0].onclick= function() { MainImg.src = smallimg[0].src;}
+        smallimg[1].onclick= function() { MainImg.src = smallimg[1].src;}
+        smallimg[2].onclick= function() { MainImg.src = smallimg[2].src;}
+        smallimg[3].onclick= function() { MainImg.src = smallimg[3].src;}
+
+
+    function addToCart() {
+        var productName = document.querySelector('.single-pro-details h4').innerText;
+        var productPrice = document.getElementById('price').innerText;
+        var quantity = parseInt(document.querySelector('input[type="number"]').value);
+
+        if (isNaN(quantity) || quantity <= 0) {
+            alert("Please enter a valid quantity.");
+            return;
+        }
+
+        var product = {
+            name: productName,
+            price: parseFloat(productPrice.replace('$', '')),
+            quantity: quantity,
+            image: document.getElementById('MainImg').src
+        };
+
+        // Retrieve existing cart items from localStorage or initialize an empty array
+        var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+        // Add the product to the cartItems array
+        cartItems.push(product);
+
+        // Store the updated cart items back to localStorage
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+        // Optionally, you can provide feedback to the user that the product has been added to the cart
+        alert("Product added to cart!");
+
+        // Redirect the user to the cart page or perform any other action as needed
+        window.location.href = "/public/cart.html";
+    }
+</script>
+
+</body>
+</html>

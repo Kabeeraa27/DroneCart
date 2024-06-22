@@ -1,0 +1,20 @@
+document.addEventListener('DOMContentLoaded', function() {
+    var toggles = document.querySelectorAll('.filter__toggle');
+
+    toggles.forEach(function(toggle) {
+        toggle.addEventListener('click', function() {
+            var filterBlock = this.nextElementSibling;
+            var icon = this.querySelector('.icon-plus');
+
+            if (filterBlock.style.display === 'block') {
+                filterBlock.style.display = 'none';
+                icon.classList.remove('icon-minus');
+                icon.classList.add('icon-plus');
+            } else {
+                filterBlock.style.display = 'block';
+                icon.classList.remove('icon-plus');
+                icon.classList.add('icon-minus');
+            }
+        });
+    });
+});
