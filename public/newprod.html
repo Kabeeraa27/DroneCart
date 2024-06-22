@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="droneApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRODUCT PAGE</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="productscript.js"></script>
+    <link rel="stylesheet" href="product-css.css">
+
+</head>
+<body ng-controller="DroneController">
+
+    <form id="x">
+        <label for="searchInput" style="color: black; font-size: 30px;">SEARCH: </label>
+        <input type="text" id="searchInput" ng-model="searchText" placeholder="Search for drones...">
+    </form>
+    <br>
+    <div class="DRONES" id="drone">
+        <div class="container" ng-repeat="drone in drones | filter: searchText" ng-click="addToCart(drone)">
+            
+            <img ng-src="{{ drone.imageUrl }}" alt="{{ drone.name }}">
+            <div class="t" >
+                <h2>{{ drone.name }}</h2>
+                <p>{{ drone.description }}</p>
+                <p>Price: {{ drone.price }}</p>
+            </div>            
+        </div>
+    </div>
+
+</body>
+</html>
