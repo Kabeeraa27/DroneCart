@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our wide range of cutting-edge drones for aerial photography, videography, mapping, and more.">
+    <title>Drone Shop Page</title>
+    <link rel="stylesheet" href="/public/CSS/HomePage(n).css">
+    <script src="https://kit.fontawesome.com/3133229378.js" crossorigin="anonymous"></script>
+    <script src="/public/JS/script.js"></script>
+
+    <style>
+        .pro {
+            display: block; /* Initially show all products */
+        }
+
+        .pro.hide {
+            display: none; /* Hide filtered products */
+        }
+
+    </style>
+    
+</head>
+<body>
+
+    <section id="header">
+        <a href="#"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="HomePage.html">HOME</a></li>
+                <li><a href="/public/shop.html">PRODUCT</a></li>
+                <li><a class="active" href="/public/Accessories.html">ACCESSORIES</a></li>
+                <li><a href="../public/blogs.html">BLOG</a></li>
+                <li><a href="../public/review.html">REVIEW</a></li>
+                <li class="qd"><a href="/public/cart.html"><img src="/public/IMG/drone.ico" alt="Drone Icon"></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="main-content" class="section-p1">
+        <div class="flex-container">
+            <div class="col-lg-3">
+                <div class="collection-sticky" id="filtersCollapse">
+                    <h2 class="h4 mt-2 mb-3">Filter by</h2>
+                    <div class="collection-filters d-flex flex-column">
+                        <div class="filter__container" data-index="category">
+                            <a class="filter__toggle" href="javascript:void(0)" role="button">
+                                <span>Category</span>
+                                <span class="icon-plus"></span>
+                            </a>
+                            <div class="filter__block" id="filter_toggle_category">
+                                <ul class="filter__list">
+                                    <li><a href="#" onclick="filterProducts('Batteries')">Batteries & Power</a></li>
+                                    <li><a href="#" onclick="filterProducts('Propellers')">Propellers</a></li>
+                                    <li><a href="#" onclick="filterProducts('RemoteControllers')">Remote Controllers</a></li>
+                                    <li><a href="#" onclick="filterProducts('FlightControllers')">Flight Controllers</a></li>
+                                    <li><a href="#" onclick="filterProducts('Goggles')">Goggles</a></li>
+                                    <li><a href="#" onclick="filterProducts('Frames')">Frames</a></li>
+                                    <li><a href="#" onclick="filterProducts('ESC')">ESC</a></li>
+                                    <li><a href="#" onclick="filterProducts('Camera')">Camera</a></li>
+                                    <li><a href="#" onclick="filterProducts('GPS')">GPS</a></li>
+                                    <li><a href="#" onclick="filterProducts('Arms')">Arms</a></li>
+                                    <li><a href="#" onclick="filterProducts('CasesBackpacks')">Cases & Backpacks</a></li>
+                                    <li><a href="#" onclick="filterProducts('SkinsWraps')">Skins & Wraps</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="filter__container" data-index="brand">
+                            <a class="filter__toggle" href="javascript:void(0)" role="button">
+                                <span>Brand</span>
+                                <span class="icon-plus"></span>
+                            </a>
+                            <div class="filter__block" id="filter_toggle_brand">
+                                <ul class="filter__list">
+                                    <li><a href="#">DJI</a></li>
+                                    <li><a href="#">Autel</a></li>
+                                    <li><a href="#">Anzu Robotics</a></li>
+                                    <li><a href="#">PolarPro</a></li>
+                                    <li><a href="#">HPRC</a></li>
+                                    <li><a href="#">GPC</a></li>
+                                    <li><a href="#">Pix4D</a></li>
+                                    <li><a href="#">Parrot</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9">
+                <section id="product1" class="section-p1">
+                    <h2>DRONE ACCESSORIES</h2>
+                    <p>Basic Drone Accessories</p>
+                    <div class="pro-container">
+
+                        <div class="pro" data-category="Arms" onclick="redirectToProduct(
+                            'DJI', 
+                            'Classic Military Drones', 
+                            78, 
+                            '/public/IMG/newimg/arm1.jpg', '/public/IMG/newimg/arm2.jpg', '/public/IMG/newimg/arm3.jpg', '/public/IMG/newimg/arm4.jpg');">
+                            <img src="/public/IMG/newimg/arm1.jpg" alt="Product Image">
+                            <div class="des">
+                                <span>DJI</span>
+                                <h5>DRONE ARMS</h5>
+                                <div class="star">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <h4>$78</h4>
+                                <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="pro" data-category="ESC" 
+                        onclick="redirectToProduct(
+                            'DJI', 
+                            'Classic Military Drones', 
+                            78, 
+                            '/public/IMG/newimg.esc1.jpg', '/public/IMG/newimg.esc2.jpg', '/public/IMG/newimg.esc3.jpg', '/public/IMG/newimg.esc4.jpg');">
+                            <img src="/public/IMG/newimg/esc1.jpg" alt="Product Image">
+                            <div class="des">
+                                <span>DJI</span>
+                                <h5>ESC</h5>
+                                <div class="star">
+                                    <i class="fas fa-star"></i> 
+                                    <i class="fas fa-star"></i> 
+                                    <i class="fas fa-star"></i> 
+                                    <i class="fas fa-star"></i> 
+                                </div>
+                                <h4>$78</h4>
+                                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="pro" data-category="Propellers" 
+                        onclick="redirectToProduct(
+                            'DJI', 
+                            'PROPELLORS', 
+                            44, 
+                            '/public/IMG/newimg/props1.jpg', '/public/IMG/newimg/props2.jpg', '/public/IMG/newimg/props3.jpg');">
+                            <img src="/public/IMG/newimg/props1.jpg" alt="Product Image">
+                            <div class="des">
+                                <span>DJI</span>
+                                <h5>PROPELLORS</h5>
+                                <div class="star">
+                                    <i class="fas fa-star"></i> 
+                                    <i class="fas fa-star"></i> 
+                                    <i class="fas fa-star"></i> 
+                                    <i class="fas fa-star"></i> 
+                                </div>
+                                <h4>$44</h4>
+                                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="pro" data-category="Frames" 
+                        onclick="redirectToProduct(
+                            'DJI', 
+                            'Classic Military Drones', 
+                            78, 
+                            '/public/IMG/products/f1.jpg', '/public/IMG/products/f2.jpg', '/public/IMG/products/f3.jpg', '/public/IMG/products/f4.jpg');">
+                            <img src="/public/IMG/newimg/fr1.jpg" alt="Product Image">
+                            <div class="des">
+                                <span>DJI</span>
+                                <h5>DRONE FRAME</h5>
+                                <div class="star">
+                                    <i class="fas fa-star"></i> 
+                                    <i class="fas fa-star"></i> 
+                                    <i class="fas fa-star"></i> 
+                                </div>
+                                <h4>$28</h4>
+                                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="pro" data-category="Batteries" 
+                        onclick="redirectToProduct(
+                            'ORANGE', 
+                            'BATTERY', 
+                            200, 
+                            '/public/IMG/newimg/battery1.jpg', '/public/IMG/newimg/battery2.jpg', '/public/IMG/newimg/battery3.jpg', '/public/IMG/newimg/battery4.jpg');">
+                            <img src="/public/IMG/newimg/battery1.jpg" alt="Product Image">
+                            <div class="des">
+                                <span>ORANGE</span>
+                                <h5>4500mAh BATTERY</h5>
+                                <div class="star">
+                                    <i class="fas fa-star"></i> 
+                                    <i class="fas fa-star"></i> 
+                                    <i class="fas fa-star"></i> 
+                                    <i class="fas fa-star"></i> 
+                                </div>
+                                <h4>$200</h4>
+                                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="pro" data-category="Goggles" 
+                        onclick="redirectToProduct(
+                            'DJI', 
+                            'GOGGLE INSECTRA', 
+                            650, 
+                            '/public/IMG/newimg/DJI google integra 1.jpg', '/public/IMG/newimg/DJI google integra 2.jpg', '/public/IMG/newimg/DJI google integra 3.jpg', '/public/IMG/newimg/DJI google integra 4.jpg');">
+                            <img src="/public/IMG/newimg/DJI google integra 1.jpg" alt="Product Image">
+                            <div class="des">
+                                <span>DJI</span>
+                                <h5>GOGGLE INSECTRA</h5>
+                                <div class="star">
+                                    <i class="fas fa-star"></i> 
+                                    <i class="fas fa-star"></i> 
+                                    <i class="fas fa-star"></i> 
+                                    <i class="fas fa-star"></i> 
+                                    <i class="fas fa-star"></i> 
+                                </div>
+                                <h4>$650</h4>
+                                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="pro" data-category="GPS" 
+                        onclick="redirectToProduct(
+                            'XYZ', 
+                            'GPS', 
+                            42, 
+                            '/public/IMG/newimg/gps 1.jpg', '/public/IMG/newimg/gps 2.jpg', '/public/IMG/newimg/gps 3.jpg', '/public/IMG/newimg/gps 4.jpg');">
+                            <img src="/public/IMG/newimg/gps 1.jpg" alt="Product Image">
+                            <div class="des">
+                                <span>DJI</span>
+                                <h5>GPC</h5>
+                                <div class="star">
+                                    <i class="fas fa-star"></i> 
+                                    <i class="fas fa-star"></i> 
+                                    <i class="fas fa-star"></i> 
+                                </div>
+                                <h4>$42</h4>
+                                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="pro" data-category="Camera" 
+                        onclick="redirectToProduct(
+                            'RUNCAM', 
+                            'Camera Accessories', 
+                            99, 
+                            '/public/IMG/newimg/CAM ASC.jpg');">
+                            <img src="/public/IMG/newimg/CAM ASC.jpg" alt="Product Image">
+                            <div class="des">
+                                <span>RUNCAM</span>
+                                <h5>CAM ACCESSORIES</h5>
+                                <div class="star">
+                                    <i class="fas fa-star"></i> 
+                                    <i class="fas fa-star"></i> 
+                                    <i class="fas fa-star"></i> 
+                                    <i class="fas fa-star"></i> 
+                                </div>
+                                <h4>$99</h4>
+                                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="pro" data-category="Camera" 
+                        onclick="redirectToProduct(
+                            'DJI', 
+                            'RUNCAM', 
+                            69, 
+                            '/public/IMG/newimg/runcam 1.jpg', '/public/IMG/newimg/runcam 2.jpg', '/public/IMG/newimg/runcam 3.jpg', '/public/IMG/newimg/runcam 4.jpg');">
+                            <img src="/public/IMG/newimg/runcam 1.jpg" alt="Product Image">
+                            <div class="des">
+                                <span>RUNCAM</span>
+                                <h5>FVP CAMERA</h5>
+                                <div class="star">
+                                    <i class="fas fa-star"></i> 
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i> 
+                                    <i class="fas fa-star"></i> 
+                                    <i class="fas fa-star"></i> 
+                                </div>
+                                <h4>$69</h4>
+                                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+    <div class="col">
+        <img class="logo" src="/public/IMG/drone.ico" alt="Drone Icon">
+        <h4>Contact</h4>
+        <p><strong>Address: </strong> 187/3, Uttarpara, Birati, Kolkata-51</p>
+        <p><strong>Phone: </strong> +91 9062397886</p>
+        <p><strong>Hours: </strong> 10:00 - 18:00, Mon - Sat</p>
+        <div class="follow">
+            <h4>Follow us</h4>
+            <div class="icon">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-pinterest-p"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <h4>About</h4>
+        <a href="#">About us</a>
+        <a href="#">Delivery Information</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Contact us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="/public/cart.html">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="../public/IMG/pay/app.jpg" alt="App Store">
+                <img src="../public/IMG/pay/play.jpg" alt="Google Play">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="../public/IMG/pay/pay.png" alt="Payment Methods">
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2024 Drone Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        var MainImg = document.getElementById("MainImg"); 
+        var smallimg = document.getElementsByClassName("small-img");
+        smallimg[0].onclick = function() { MainImg.src = smallimg[0].src; };
+        smallimg[1].onclick = function() { MainImg.src = smallimg[1].src; };
+        smallimg[2].onclick = function() { MainImg.src = smallimg[2].src; };
+        smallimg[3].onclick = function() { MainImg.src = smallimg[3].src; };
+        
+        function filterProducts(category) {
+        var products = document.querySelectorAll('.pro');
+        var categoryItems = document.querySelectorAll('.filter__list a');
+
+        categoryItems.forEach(function(item) {
+            item.classList.remove('active');
+        });
+
+        document.querySelector('.filter__list a[href="#"][onclick^="filterProducts(\'' + category + '\')"]').classList.add('active');
+
+        products.forEach(function(product) {
+            if (product.getAttribute('data-category') === category || category === 'all') {
+                product.classList.remove('hide'); 
+            } else {
+                product.classList.add('hide'); 
+            }
+        });
+        }
+
+        function redirectToProduct(brand, productName, price, image1, image2, image3, image4) {
+        var url = 'aprod.html?brand=' + encodeURIComponent(brand) +
+                '&productName=' + encodeURIComponent(productName) +
+                '&price=' + encodeURIComponent(price) +
+                '&image1=' + encodeURIComponent(image1) +
+                '&image2=' + encodeURIComponent(image2) +
+                '&image3=' + encodeURIComponent(image3) +
+                '&image4=' + encodeURIComponent(image4);
+        
+        window.location.href = url;
+        }
+    </script>
+
+</body>
+</html>

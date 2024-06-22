@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our wide range of cutting-edge drones for aerial photography, videography, mapping, and more.">
+    <title>Drone Shop Page</title>
+    <link rel="stylesheet" href="/public/CSS/HomePage(n).css">
+    <script src="https://kit.fontawesome.com/3133229378.js" crossorigin="anonymous"></script>
+    <script src="/public/JS/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+</head>
+<body>
+
+    <style>
+        .pro {
+            display: none; /* Initially hide all products */
+        }
+        .pro.show {
+            display: block; /* Show filtered products */
+        }
+    </style>
+
+    <section id="header">
+        <a href="#"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="HomePage.html">HOME</a></li>
+                <li><a href="/public/shop.html">PRODUCT</a></li>
+                <li><a class="active" href="/public/Accessories.html">ACCESSORIES</a></li>
+                <li><a href="../public/blogs.html">BLOG</a></li>
+                <li><a href="../public/review.html">REVIEW</a></li>
+                <li class="qd"><a href="/public/cart.html"><img src="/public/IMG/drone.ico" alt="Drone Icon"></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="main-content" class="section-p1" ng-controller="ProductController">
+        <div class="flex-container">
+            <div class="col-lg-3">
+                <div class="collection-sticky" id="filtersCollapse">
+                    <h2 class="h4 mt-2 mb-3">Filter by</h2>
+                    <div class="collection-filters d-flex flex-column">
+                        <div class="filter__container" data-index="category">
+                            <a class="filter__toggle" href="javascript:void(0)" role="button">
+                                <span>Category</span>
+                                <span class="icon-plus"></span>
+                            </a>
+                            <div class="filter__block" id="filter_toggle_category">
+                                <ul class="filter__list">
+                                    <li ng-repeat="category in categories">
+                                        <a href="#" ng-click="filterProducts(category)">{{ category }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="filter__container" data-index="brand">
+                            <a class="filter__toggle" href="javascript:void(0)" role="button">
+                                <span>Brand</span>
+                                <span class="icon-plus"></span>
+                            </a>
+                            <div class="filter__block" id="filter_toggle_brand">
+                                <ul class="filter__list">
+                                    <li><a href="#">DJI</a></li>
+                                    <li><a href="#">Autel</a></li>
+                                    <li><a href="#">Anzu Robotics</a></li>
+                                    <li><a href="#">PolarPro</a></li>
+                                    <li><a href="#">HPRC</a></li>
+                                    <li><a href="#">GPC</a></li>
+                                    <li><a href="#">Pix4D</a></li>
+                                    <li><a href="#">Parrot</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9">
+                <section id="product1" class="section-p1">
+                    <h2>Featured Drones</h2>
+                    <p>New Modern Design</p>
+                    <div class="pro-container">
+                        <div class="pro" ng-repeat="product in filteredProducts = (products | filter: { category: selectedCategory })">
+                            <img ng-src="{{ product.image }}" alt="">
+                            <div class="des">
+                                <span>{{ product.brand }}</span>
+                                <h5>{{ product.name }}</h5>
+                                <div class="star">
+                                    <i class="fas fa-star" ng-repeat="star in [1,2,3,4,5]"></i>
+                                </div>
+                                <h4>{{ product.price }}</h4>
+                                <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="/public/IMG/drone.ico" alt="Drone Icon">
+            <h4>Contact</h4>
+            <p><strong>Address: </strong> 187/3, Uttarpara, Birati, Kolkata-51</p>
+            <p><strong>Phone: </strong> +91 9062397886</p>
+            <p><strong>Hours: </strong> 10:00 - 18:00, Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram">
+                </div>
+            </div>
+        </div>
+    
+            <div class="col">
+                <h4>About</h4>
+                <a href="#">About us</a>
+                <a href="#">Delivery Information</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Contact us</a>
+            </div>
+    
+            <div class="col">
+                <h4>My Account</h4>
+                <a href="#">Sign In</a>
+                <a href="#">View Cart</a>
+                <a href="#">My Wishlist</a>
+                <a href="#">Track My Order</a>
+                <a href="#">Help</a>
+            </div>
+    
+            <div class="col install">
+                <h4>Install App</h4>
+                <p>From App Store or Google Play</p>
+                <div class="row">
+                    <img src="../public/IMG/pay/app.jpg" alt="App Store">
+                    <img src="../public/IMG/pay/play.jpg" alt="Google Play">
+                </div>
+                <p>Secured Payment Gateways</p>
+                <img src="../public/IMG/pay/pay.png" alt="Payment Methods">
+            </div>
+    
+            <div class="copyright">
+                <p>&copy; 2024 Drone Store. All rights reserved.</p>
+            </div>
+        </footer>
+    
+        <script>
+            var app = angular.module('droneApp', []);
+            app.controller('ProductController', function($scope) {
+                $scope.categories = ['Batteries & Power', 'Propellers', 'Remote Controllers', 'Flight Controllers', 'Batteries', 'Goggles', 'Frames', 'ESC', 'Camera', 'GPS', 'Arms', 'Cases & Backpacks', 'Skins & Wraps'];
+                
+                $scope.products = [
+                    { category: 'ARMS', brand: 'DJI', name: 'DRONE ARMS', price: '$35', image: '../public/IMG/newimg/arm1.jpg' },
+                    { category: 'ESC', brand: 'DJI', name: 'ELECTRONIC SPEED CONTROLLER (ESC)', price: '$14', image: '../public/IMG/newimg/esc1.jpg' },
+                ];
+    
+                $scope.selectedCategory = '';
+                $scope.filterProducts = function(category) {
+                    $scope.selectedCategory = category;
+                };
+            });
+    
+        </script>
+    
+    </body>
+    </html>
+    
