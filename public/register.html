@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Sign up !</title>
+    <style>
+        body {
+            background-image: url('login_bg.jpg');
+            background-repeat: no-repeat;
+            background-size: 100%;
+            color: black;
+        }
+        div.box {
+            width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0px 0px 50px 5px black;
+            margin-top: 50px;
+        }
+        .inp {
+            width: 550px;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid grey;
+            border-radius: 5px;
+            box-shadow:inset 0px 0px 2px 1px rgba(128, 128, 128, 0.349);
+        }
+        h2 {
+            font-family:monospace;
+            font-weight: 900;
+        }
+        #sub {
+            width: 570px;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            background-color: #007bff;
+            color:white;
+        }
+        a {
+            color: black;
+            text-decoration: underline;
+        }
+        span {
+            color:red;
+            font-family: 'Open Sans';
+        }
+    </style>
+</head>
+<body bgcolor="black">
+    <center>
+    <div class="box">
+        <h2 style="font-size: 40px;">Time to Register</h2>
+        <form id="register" action="/register" method="POST" onsubmit="return validateform()">
+            <input type="text" id="name" name="name" placeholder="Name" class="inp" required><span id="nam"></span><br><br>
+            <input type="email" id="email" name="email" placeholder="Email" class="inp" required><span id="ema"></span><br><br>
+            <input type="text" id="username" name="username" placeholder="Username" class="inp" required><span id="use"></span><br><br>
+            <input type="password" id="password" name="password" placeholder="Password" class="inp" required><br><span id="pas"></span><br><br>
+            <input type="submit" value="Register" id="sub" >
+        </form>
+        <p>Already a member? <a href="login.html" >Login</a></p>
+    </div>
+</center>
+</body>
+<script>
+    const usernameInput = document.querySelector('input[name="username"]');
+    const passwordInput = document.querySelector('input[name="password"]');
+    const usernameError = document.getElementById("use");
+    const passwordError = document.getElementById("pas");
+    
+    function validateForm() {
+        let valid = true;
+
+        // Reset error messages
+        usernameError.textContent = "";
+        passwordError.textContent = "";
+
+        // Validate username
+        if (usernameInput.value.trim() === "") {
+            usernameError.textContent = "Username can't be blank";
+            valid = false;
+        }
+
+        // Validate password
+        const password = passwordInput.value;
+        if (password.length < 8) {
+            passwordError.textContent = "Password must be at least 8 characters long";
+            valid = false;
+        } else if (!/[A-Z]/.test(password)) {
+            passwordError.textContent = "Password must contain at least one uppercase letter";
+            valid = false;
+        } else if (!/[a-z]/.test(password)) {
+            passwordError.textContent = "Password must contain at least one lowercase letter";
+            valid = false;
+        }
+
+        return valid;
+    }
+</script>
+</html>
