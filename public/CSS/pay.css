@@ -1,0 +1,71 @@
+body {
+    background-image: url("pay_bg.jpg");
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+input {
+    width:500px;
+    height: 25px;
+    border:1px solid #ccc;
+    border-radius: 10px;
+}
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #ffffff8a;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    height: auto;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+textarea {
+    width: 500px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #fff;
+    appearance: none;
+}
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+.error {
+    color: #ff0000;
+    font-size: 14px;
+}

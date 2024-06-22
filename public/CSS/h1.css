@@ -1,0 +1,343 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+#header {
+    background: #333;
+    color: white;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#navbar, #login-container {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar li, #login-container li {
+    padding: 0 20px;
+}
+
+#navbar a, #login-container a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+#navbar a:hover, #navbar a.active, #login-container a:hover {
+    color: blue;
+}
+
+#navbar a.active::after, #navbar a:hover::after, #login-container a:hover::after {
+    content: "";
+    width: 30px;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+#navbar .qd img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Hero section styles */
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: url('../public/IMG/hero-background.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 100px 20px;
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background: #088178;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #066b5d;
+}
+
+.hero-image img {
+    width: 500px;
+    height: auto;
+}
+
+/* Small banner styles */
+#sm-banner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.banner-box1, .banner-box2 {
+    background: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+    width: 45%;
+}
+
+.banner-box1 h4, .banner-box2 h4 {
+    margin: 0 0 10px;
+}
+
+.banner-box1 h2, .banner-box2 h2 {
+    margin: 10px 0;
+}
+
+.banner-box1 button, .banner-box2 button {
+    background: white;
+    color: #333;
+    border: 1px solid #333;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.banner-box1 button:hover, .banner-box2 button:hover {
+    background: #333;
+    color: white;
+}
+
+/* Banner2 styles */
+#banner2 {
+    background: #e2e2e2;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#banner2 h3 {
+    margin-top: 20px;
+}
+
+/* Features section styles */
+#features {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.fe-box {
+    text-align: center;
+}
+
+.fe-box img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.fe-box h6 {
+    margin: 0;
+}
+
+/* Product section styles */
+#product1 {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.pro-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.pro {
+    background: #fff;
+    padding: 10px;
+    width: 30%;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.pro:hover {
+    transform: translateY(-10px);
+}
+
+.pro img {
+    width: 100%;
+    height: auto;
+}
+
+.des {
+    text-align: left;
+    padding: 10px 0;
+}
+
+.des span {
+    color: #888;
+    font-size: 14px;
+}
+
+.des h5 {
+    margin: 10px 0;
+}
+
+.des .star i {
+    color: #ffcc00;
+}
+
+.des h4 {
+    margin: 10px 0;
+    color: #088178;
+}
+
+.cart {
+    color: #333;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Reviews section styles */
+#reviews {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.reviews-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.revbox {
+    background: #fff;
+    padding: 20px;
+    width: 30%;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.revbox h6 {
+    margin-bottom: 10px;
+    color: #088178;
+}
+
+.revbox p {
+    color: #333;
+}
+
+/* Newsletter section styles */
+#newsletter {
+    background: url('../public/IMG/newsletter-background.jpg') no-repeat center center/cover;
+    padding: 50px 20px;
+    color: white;
+    text-align: center;
+}
+
+.newstext h4 {
+    margin-bottom: 20px;
+}
+
+.newstext p span {
+    color: #ffcc00;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form input {
+    padding: 10px;
+    border: none;
+    width: 300px;
+}
+
+.form button {
+    background: #088178;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.form button:hover {
+    background: #066b5d;
+}
+
+/* Footer styles */
+footer {
+    background: #333;
+    color: white;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+footer .col {
+    width: 23%;
+    margin-bottom: 20px;
+}
+
+footer h4 {
+    margin-bottom: 10px;
+}
+
+footer p, footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer .icon i {
+    font-size: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+footer .install img {
+    width: 120px;
+    height: auto;
+    margin-right: 10px;
+}
+
+footer .install p {
+    margin-top: 10px;
+}
+
+footer .copyright {
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+}
