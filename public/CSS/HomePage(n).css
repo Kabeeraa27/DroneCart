@@ -787,7 +787,7 @@ footer .copyright {
 }
 
 
-/*=============== APRODS PAGER ===============*/
+/*=============== APRODS PAGE ===============*/
 
 
 .single-pro-image {
@@ -926,10 +926,7 @@ footer .copyright {
     padding: 10px;
 }
 
-
-
-
-/* General container and layout styles */
+/*=============== GENERAL CONTAINER AND LAYOUT STYLES ===============*/
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -964,6 +961,12 @@ footer .copyright {
     position: sticky;
     top: 20px;
 }
+.collection-sticky h2{
+    margin-top: 30px;
+    text-align: center;
+    position: sticky;
+    z-index: 999;
+}
 
 .h4 {
     font-size: 1.5rem;
@@ -973,19 +976,29 @@ footer .copyright {
     font-size: 1.25rem;
 }
 
-/* Filter section styles */
+/*=============== FILTER SECTION ===============*/
+
 .filter__container {
     margin-bottom: 20px;
+    position: sticky;
+    top: 20px; 
+    z-index: 999;
+    background-color: #fff; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 30px;
 }
 
 .filter__toggle {
     cursor: pointer;
     display: flex;
     justify-content: space-between;
+    align-items: center; 
     padding: 10px;
-    border: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
     background-color: #f9f9f9;
-    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
@@ -996,10 +1009,13 @@ footer .copyright {
 .filter__block {
     display: none;
     padding: 10px;
-    border: 1px solid #ccc;
     border-top: none;
     border-radius: 0 0 5px 5px;
     background-color: #fff;
+}
+
+.filter__block.open {
+    display: block;
 }
 
 .filter__list {
@@ -1021,7 +1037,7 @@ footer .copyright {
     color: #007bff;
 }
 
-/* Product card styles */
+/*=============== PRODUCT CARD STYLES ===============*/
 .product-card {
     border: 1px solid #ccc;
     padding: 15px;
@@ -1055,7 +1071,7 @@ footer .copyright {
 
 .col-lg-3 {
     flex: 0 0 auto;
-    margin-right: 20px; /* Adjust the margin as needed */
+    margin-right: 20px;
 }
 
 .col-lg-9 {
@@ -1090,12 +1106,10 @@ footer .copyright {
     max-width: 75%;
 }
 
-/* Optional: Add some padding/margin to separate the sections visually */
 .flex-container > div {
     padding: 10px;
 }
 
-/* Make sure the filter and product containers stack vertically on smaller screens */
 @media (max-width: 768px) {
     .flex-container {
         flex-direction: column;
@@ -1106,9 +1120,7 @@ footer .copyright {
     }
 }
 
-
 /*=============== BLOG PAGE ===============*/
-
 
 
 #blog {
@@ -1219,7 +1231,6 @@ footer .copyright {
         height: 200px;
     }
 }
-
 
 /*=============== REVIEW PAGE ===============*/
 
