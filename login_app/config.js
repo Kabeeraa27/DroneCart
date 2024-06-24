@@ -1,65 +1,66 @@
-var express = require('express');
-var env = require('dotenv').config()
-var ejs = require('ejs');
-var path = require('path');
-var app = express();
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var session = require('express-session');
-var MongoStore = require('connect-mongo')(session);
+const express = require('express');
+const mongoose = require('mongoose');
+const session = require('express-session');
+const bodyParser = require('body-parser');
+const path = require('path');
 
-mongoose.connect('mongodb+srv://<DB_USER_NAME>:<DB_PASSWORD>@cluster0-vatbg.mongodb.net/registrationFormHeruko?retryWrites=true&w=majority', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}, (err) => {
-  if (!err) {
-    console.log('MongoDB Connection Succeeded.');
-  } else {
-    console.log('Error in DB connection : ' + err);
-  }
-});
+const app = express();
 
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function () {
-});
+// MongoDB connection setup
+async function connectToDatabase() {
+    try {
+      await mongoose.connect('mongodb+srv://kabeeer27:DroneCart@cluster0.nmqspld.mongodb.net/USER_DATA:27017', {      
+        useNewUrlParser: true,
+            useUnifiedTopology: true
+        });
+        console.log('MongoDB Connection Succeeded.');
+    } catch (err) {
+        console.error('Error in DB connection : ' + err);
+        process.exit(1); // Exit process on database connection failure
+    }
+}
 
+connectToDatabase();
+
+// Set up sessions and other middleware
 app.use(session({
-  secret: 'work hard',
-  resave: true,
-  saveUninitialized: false,
-  store: new MongoStore({
-    mongooseConnection: db
-  })
+    secret: '6969',
+    resave: true,
+    saveUninitialized: false
 }));
 
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');	
+app.set('view engine', 'ejs');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(express.static(__dirname + '/views'));
+app.use(express.static(path.join(__dirname, 'public')));
 
-var index = require('./routes/index');
-app.use('/', index);
+// Routes
+const indexRouter = require('./routes/index');
+app.use('/', indexRouter);
 
-// catch 404 and forward to error handler
+// Serve Homepage.html
+app.get('/Homepage.html', function(req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'Homepage.html'));
+});
+
+
+// Error handling middleware
 app.use(function (req, res, next) {
-  var err = new Error('File Not Found');
-  err.status = 404;
-  next(err);
+    const err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
-// error handler
-// define as the last app.use callback
 app.use(function (err, req, res, next) {
-  res.status(err.status || 500);
-  res.send(err.message);
+    res.status(err.status || 500);
+    res.send(err.message);
 });
 
-
+// Start server
 const PORT = process.env.PORT || 27017;
 app.listen(PORT, function () {
-  console.log('Server is started on http://127.0.0.1:'+PORT);
+    console.log('Server is started on http://127.0.0.1:' + PORT);
 });

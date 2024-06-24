@@ -1,159 +1,259 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Blog</title>
-    <link rel="stylesheet" type="text/css" href="blog.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our wide range of cutting-edge drones for aerial photography, videography, mapping, and more.">
+    <title>Drone Cart Home Page</title>
+    <link rel="stylesheet" href="/public/CSS/HomePage(n).css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/3133229378.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <div class="container">
-        <h1>Create a Blog Post</h1>
-        <form action="submit_post.php" method="post">
-            <label for="title">Title:</label>
-            <input type="text" id="title" name="title" required><br>
+<body>  
 
-            <label for="content">Content:</label><br>
-            <textarea id="content" name="content" rows="5" cols="33" required></textarea><br>
+    <section id="header">
+        <div>
+            <ul id="login-container">
+                <li id="login-signup"><a id="login" href="/public/login.html">LOGIN/SIGNUP</a></li>
+                <li id="usernameDisplay" style="display:none;"></li>
+            </ul>
+            
+        </div>
+        <div>
+            <ul id="navbar">
+                <li><a href="HomePage.html">HOME</a></li>
+                <li><a href="/public/shop.html">PRODUCT</a></li>
+                <li><a href="/public/Accessories.html">ACCESSORIES</a></li>
+                <li><a class="active" href="../public/blogs.html">BLOG</a></li>
+                <li><a href="../public/review.html">REVIEW</a></li>
+                <li class="qd"><a href="/public/cart.html"><img src="/public/IMG/drone.ico" alt="Drone Icon"></a></li>
+            </ul>
+        </div>
+    </section>
 
-            <input type="submit" value="Submit">
-        </form>
-    </div>
+    <!-- <section id="hero">
+        <div class="hero-content">
+            <h1>Discover the World from Above</h1>  
+            <p>Explore our wide range of cutting-edge drones for aerial photography, videography, mapping, and more.</p>
+        </div>
+    </section> -->
+
+    <section id="heading1">
+        <h1>BLOG CORNER</h1>
+        <p>See about latest drone updates, read more about miitary, agri drone sectors..</p> 
+    </section>
+
+    <section id="blog">
+        <div class="blog-box">
+			<div class="blog-img">
+				<img src="" alt="">
+			</div>
+			<div class="blog-details">
+				<h4>FPV DRONES</h4>
+				<p> READ MORE </p>
+				<a href="#"> CONTINURE READING</a>
+			</div>
+		</div>
+
+		<div class="blog-box">
+			<div class="blog-img">
+				<img src="" alt="">
+			</div>
+			<div class="blog-details">
+				<h4>AGRICULTURAL DRONES</h4>
+				<p> READ MORE </p>
+				<a href="#"> CONTINURE READING</a>
+			</div>
+		</div>
+
+		<div class="blog-box">
+			<div class="blog-img">
+				<img src="" alt="">
+			</div>
+			<div class="blog-details">
+				<h4>MILITARY DRONES</h4>
+				<p> READ MORE </p>
+				<a href="#"> CONTINURE READING</a>
+			</div>
+		</div>
+
+		<div class="blog-box">
+			<div class="blog-img">
+				<img src="" alt="">
+			</div>
+			<div class="blog-details">
+				<h4>ARCHITECHTURAL DRONES</h4>
+				<p> READ MORE </p>
+				<a href="#"> CONTINURE READING</a>
+			</div>
+		</div>
+	</section>
+
+    <section id="product1" class="section-p1">
+        <div class="pro-container">
+            <div class="pro">
+                <img src="../public/IMG/d1.jpg" alt=""> 
+                <div class="des">
+                    <span>DJI</span>
+                    <h5>Classic Military Drones</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i> 
+                        <i class="fas fa-star"></i> 
+                        <i class="fas fa-star"></i> 
+                        <i class="fas fa-star"></i> 
+                        <i class="fas fa-star"></i> 
+                    </div>
+                    <h4>$78</h4>
+                    <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>                
+                </div>
+            </div>
+
+            <div class="pro">
+                <img src="../public/IMG/d2.jpg" alt="Product Image"> 
+                <div class="des">
+                    <span>DJI</span>
+                    <h5>Classic Military Drones</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i> 
+                        <i class="fas fa-star"></i> 
+                        <i class="fas fa-star"></i> 
+                        <i class="fas fa-star"></i> 
+                        <i class="fas fa-star"></i> 
+                    </div>
+                    <h4>$78</h4>
+                    <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+                </div>
+            </div>
+
+            <div class="pro">
+                <img src="../public/IMG/d3.jpg" alt="Product Image"> 
+                <div class="des">
+                    <span>DJI</span>
+                    <h5>Classic Military Drones</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i> 
+                        <i class="fas fa-star"></i> 
+                        <i class="fas fa-star"></i> 
+                        <i class="fas fa-star"></i> 
+                        <i class="fas fa-star"></i> 
+                    </div>
+                    <h4>$78</h4>
+                    <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>  
+    
+    <section id="newsletter" class="section-p1">
+        <div class="newstext">
+            <h4>Sign Up for Newletters</h4>
+            <p>Get the latest updates and <span>Special Offers.</span> </p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Your Email Address">
+            <button class="normal"> Sign Up </button>
+        </div>
+    </section>
+        
+    <footer class="section-p1">
+        <div class="col">
+            <h4>Contact</h4>
+            <p><strong>Address: </strong> 187/3, Uttarpara, Birati, Kolkata-51</p>
+            <p><strong>Phone: </strong> +91 9062397886</p>
+            <p><strong>Hours: </strong> 10:00 - 18:00, Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact us</a>
+        </div>
+    
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="/public/cart.html">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+    
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="../public/IMG/pay/app.jpg" alt="App Store">
+                <img src="../public/IMG/pay/play.jpg" alt="Google Play">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="../public/IMG/pay/pay.png" alt="Payment Methods">
+        </div>
+    
+        <div class="copyright">
+            <p>&copy; 2024 Drone Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const username = getCookie("username");
+            if (username) {
+                document.getElementById("login-signup").style.display = "none";
+                document.getElementById("usernameDisplay").style.display = "block";
+                document.getElementById("usernameDisplay").innerText = username;
+            }
+        });
+
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        document.getElementById("login").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            // Fetch username and password from the form
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Send a POST request to your backend server with username and password
+            fetch("/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ username, password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // If login is successful, set a cookie with the username
+                    document.cookie = `username=${username}`;
+                    // Hide login/signup link
+                    document.getElementById("login-signup").style.display = "none";
+                    // Show username on the page
+                    document.getElementById("usernameDisplay").style.display = "block";
+                    document.getElementById("usernameDisplay").innerText = username;
+                } else {
+                    alert(data.message); // Display error message
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        });
+    </script>
 </body>
 </html>
-<style>
-.container {
-    width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
-
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-form {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input[type="text"], textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-textarea {
-    resize: vertical;
-}
-
-input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-</style>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>UAV Models</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-	<header>
-		<h1>UAV Models</h1>
-	</header>
-
-	<main>
-		<section id="dji">
-			<h2>DJI</h2>
-			<img src="DJI Mavic Air 2.jpeg" alt="DJI Mavic Air 2">
-			<p>The DJI Mavic Air 2 is a high-performance drone that offers 48MP photos, 4K video, and a 3-axis gimbal for stability.</p>
-		</section>
-
-		<section id="parrot">
-			<h2>Parrot</h2>
-			<img src="parrot anafi.jpeg" alt="Parrot Anafi">
-			<p>The Parrot Anafi is a lightweight and portable drone that offers 4K HDR video, a 21MP camera, and a 3-axis stabilization system.</p>
-		</section>
-
-		<section id="autel">
-			<h2>Autel</h2>
-			<img src="autel evo II.jpeg" alt="Autel Evo II">
-			<p>The Autel Evo II is a powerful and versatile drone that offers 8K video, a 1/2-inch sensor, and a 3-axis gimbal for smooth footage.</p>
-		</section>
-	</main>
-
-	<footer>
-		<p>&copy; 2023 UAV Models</p>
-	</footer>
-
-	<script src="script.js"></script>
-</body>
-</html>
-<style>
-body {
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
-}
-
-header {
-	background-color: #333;
-	color: #fff;
-	padding: 1rem;
-}
-
-main {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	margin: 2rem;
-}
-
-section {
-	background-color: #f2f2f2;
-	border: 1px solid #ddd;
-	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-	flex-basis: 30%;
-	margin: 1rem;
-	padding: 1rem;
-}
-
-section img {
-	max-width: 100%;
-}
-
-footer {
-	background-color: #333;
-	color: #fff;
-	padding: 1rem;
-	text-align: center;
-}
-</style>
-<script>
-// Example functionality to be added to the blog
-
-document.getElementById('dji').addEventListener('click', function() {
-	alert('You clicked on the DJI section!');
-});
-document.getElementById('parrot').addEventListener('click', function() {
-	alert('You clicked on the Parrot section!');
-});
-document.getElementById('autel').addEventListener('click', function() {
-	alert('You clicked on the Autel evo section!');
-});
-</script>
