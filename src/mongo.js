@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-mongoose.connect('mongodb+srv://kabeeer27:DroneCart@cluster0.nmqspld.mongodb.net/USER_DATA:27017')      
     .then(() => {
         console.log('Mongoose connected');
     })
