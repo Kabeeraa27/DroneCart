@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+mongoose.connect('mongodb+srv://USERNAME:PASSWORD@CLUSTER_NAME.mongodb.net/DATABASE_NAME')      
     .then(() => {
         console.log('Mongoose connected');
     })
@@ -19,5 +20,4 @@ const logInSchema = new mongoose.Schema({
 });
 
 const LogInCollection = mongoose.model('data', logInSchema);
-
 module.exports = LogInCollection;

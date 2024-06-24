@@ -1,13 +1,118 @@
-\<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Review page</title>
+    <meta name="description" content="Explore our wide range of cutting-edge drones for aerial photography, videography, mapping, and more.">
+    <title>Drone Cart Home Page</title>
+    <link rel="stylesheet" href="/public/CSS/HomePage(n).css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/3133229378.js" crossorigin="anonymous"></script>
 
-    <script>  
+</head>
+<body>
+    <section id="header">
+        <div>
+            <ul id="login-container">
+                <li id="login-signup"><a id="login" href="/public/login.html">LOGIN/SIGNUP</a></li>
+                <li id="usernameDisplay" style="display:none;"></li>
+            </ul>
+        </div>
+        <div>
+            <ul id="navbar">
+                <li><a href="HomePage.html">HOME</a></li>
+                <li><a href="/public/shop.html">PRODUCT</a></li>
+                <li><a href="/public/Accessories.html">ACCESSORIES</a></li>
+                <li><a href="../public/blogs.html">BLOG</a></li>
+                <li><a class="active" href="../public/review.html">REVIEW</a></li>
+                <li class="qd"><a href="/public/cart.html"><img src="/public/IMG/drone.ico" alt="Drone Icon"></a></li>
+            </ul>
+        </div>
+    </section>
 
-    function validateemail() {
+    <div class="box">
+        <h2><b>Write a review below:</b></h2>
+        <form action="#" method="post" name="myform" onsubmit="return validatename() && validateemail() && submitReview(event)">
+            <input type="text" name="name" placeholder="Your Name">
+            <input type="text" name="email" placeholder="Your Email" required>
+            <select class="star" onchange="updateEmoji()">
+                <option value="none">SELECT RATING</option>
+                <option value="1">1 STARS</option>
+                <option value="2">2 STARS</option>
+                <option value="3">3 STARS</option>
+                <option value="4">4 STARS</option>
+                <option value="5">5 STARS</option>
+            </select>
+            <span style="padding:5px;" id="emo">&#x2753;</span>
+            <textarea name="review" rows="10" placeholder="Type your review here" required></textarea>
+            <input type="submit" value="Submit Review" id="sub">
+        </form>
+        <!-- <button onclick="viewReviews()">View My Reviews</button> -->
+    </div>
+
+    <br><br><br>
+
+    <section id="newsletter" class="section-p1">
+        <div class="newstext">
+            <h4>Sign Up for Newsletters</h4>
+            <p>Get the latest updates and <span>Special Offers.</span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Your Email Address">
+            <button class="normal">Sign Up</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> 187/3, Uttarpara, Birati, Kolkata-51</p>
+            <p><strong>Phone:</strong> +91 9062397886</p>
+            <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact us</a>
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="/public/cart.html">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="../public/IMG/pay/app.jpg" alt="App Store">
+                <img src="../public/IMG/pay/play.jpg" alt="Google Play">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="../public/IMG/pay/pay.png" alt="Payment Methods">
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Drone Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function validateemail() {
             var x = document.myform.email.value;
             var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(x)) {
@@ -16,23 +121,65 @@
             }
         }
 
-    function validatename() {  
-        var name = document.myform.name.value;  
-        if (name == null || name == "") 
-        {  
-            alert("Name can't be blank");  
-            return false;  
+        function validatename() {
+            var name = document.myform.name.value;
+            if (name == null || name == "") {
+                alert("Name can't be blank");
+                return false;
+            }
         }
-    }
 
-    function validateform()
-    {
-    validateemail()
-    validatename()
-    return alert("Thanks for your review !");   
-    }
+        function validateform() {
+            return validateemail() && validatename();
+        }
 
-    function updateEmoji() {
+        function submitReview(event) {
+            event.preventDefault();
+            if (validateform()) {
+                var formData = new FormData(document.forms.myform);
+                fetch('/submit-review', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        name: formData.get('name'),
+                        email: formData.get('email'),
+                        rating: formData.get('star'),
+                        review: formData.get('review')
+                    }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert("Thanks for your review!");
+                    document.forms.myform.reset();
+                })
+                .catch(error => console.error('Error:', error));
+            }
+        }
+
+        // function viewReviews() {
+        //     fetch('/get-reviews')
+        //         .then(response => response.json())
+        //         .then(data => {
+        //             var reviewsContainer = document.getElementById('reviews-container');
+        //             var reviewsList = document.getElementById('reviews-list');
+        //             reviewsList.innerHTML = '';
+        //             data.forEach(review => {
+        //                 var reviewDiv = document.createElement('div');
+        //                 reviewDiv.innerHTML = `
+        //                     <h3>${review.name}</h3>
+        //                     <p>Rating: ${review.rating}</p>
+        //                     <p>${review.review}</p>
+        //                 `;
+        //                 reviewsList.appendChild(reviewDiv);
+        //             });
+        //             reviewsContainer.style.display = 'block';
+        //         })
+        //         .catch(error => console.error('Error:', error));
+        // }
+
+        function updateEmoji() {
             var selectElement = document.querySelector(".star");
             var emojiSpan = document.getElementById("emo");
             var selectedValue = selectElement.value;
@@ -56,85 +203,7 @@
                     emojiSpan.textContent = "❓";
             }
         }
-
-
-
     </script>
 
-    <style>
-        body {
-            text-decoration: solid;
-            font-family: Georgia;
-            background-color: rgb(58, 58, 58);
-            color: black;
-        }
-        .box {
-            width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0px 0px 50px 5px black;
-            margin-top: 50px;
-        }
-        input {
-            width: 550px;
-            padding: 10px;
-            margin: 10px;
-            border: 1px solid grey;
-            border-radius: 5px;
-            box-shadow:inset 0px 0px 2px 1px rgba(128, 128, 128, 0.349);
-        }
-        textarea {
-            font-family: sans-serif;
-            width: 550px;
-            padding: 10px;
-            margin: 10px;
-            border: 1px solid grey;
-            border-radius: 3px;
-            resize: none;
-            box-shadow:inset 0px 0px 2px 1px rgba(128, 128, 128, 0.349);
-        }
-        #sub {
-            width: 570px;
-            padding: 10px;
-            border: none;
-            border-radius: 3px;
-            background-color: #007bff;
-            color:white;
-        }
-
-        select {
-            background-color: white;
-            height: 30px;
-            width: 320px;
-            border: 1px solid grey;
-            border-radius: 3px;
-            margin-top: 20px;
-            margin-bottom: 5px;
-        }
-    </style>
-
-</head>
-<body>
-    <div class="box">
-        <h2><b>Write a review below:</b></h2>
-        <form action="#" method="post" name="myform" onsubmit="return validatename() && validateemail()">
-            <input type="text" name="name" placeholder="Your Name">
-            <input type="text" name="email" placeholder="Your Email" required>
-            <label for="star" style="margin:10px 10px 10px 10px;">Select rating:  </label>
-            <select class="star" onchange="updateEmoji()">
-                <option value="none">----</option>
-                <option value="1">1 star</option>
-                <option value="2">2 star</option>
-                <option value="3">3 star</option>
-                <option value="4">4 star</option>
-                <option value="5">5 star</option>
-            </select>
-            <span style="padding:5px;" id="emo">&#x2753;</span>
-            <textarea name="review" rows="10" placeholder="Type your review here" required></textarea>
-            <input type="submit" value="Submit Review" id="sub" onclick="return validateform()">
-        </form>
-    </div>
 </body>
 </html>
